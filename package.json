@@ -9,5 +9,8 @@
   "private": false,
   "dependencies": {
     "discord.js": "^14.6.0"
+  },
+  "devDependencies": {
+    "prettier": "2.7.1"
   }
 }
