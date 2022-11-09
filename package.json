@@ -7,6 +7,11 @@
   "author": "Tristan F. <LeoDog896@hotmail.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "format": "prettier --write .",
+    "check": "prettier --check .",
+    "build": "tsc"
+  },
   "dependencies": {
     "discord.js": "^14.6.0"
   },
