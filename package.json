@@ -1,0 +1,13 @@
+{
+  "name": "discord-chat-webhook",
+  "version": "1.0.0",
+  "description": "An interactive bot wrapper around discord webhooks",
+  "main": "dist/index.js",
+  "repository": "https://github.com/LeoDog896/discord-chat-webhook",
+  "author": "Tristan F. <LeoDog896@hotmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "discord.js": "^14.6.0"
+  }
+}
