@@ -1,6 +1,7 @@
 {
   "name": "discord-chat-webhook",
   "version": "1.0.0",
+  "type": "module",
   "description": "An interactive bot wrapper around discord webhooks",
   "main": "dist/index.js",
   "repository": "https://github.com/LeoDog896/discord-chat-webhook",
@@ -13,7 +14,9 @@
     "build": "tsc"
   },
   "dependencies": {
-    "discord.js": "^14.6.0"
+    "consola": "^2.15.3",
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
     "eslint": "^8.27.0",
