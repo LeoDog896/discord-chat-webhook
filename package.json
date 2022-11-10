@@ -1,26 +1,26 @@
 {
-  "name": "discord-chat-webhook",
-  "version": "1.0.0",
-  "type": "module",
-  "description": "An interactive bot wrapper around discord webhooks",
-  "main": "dist/index.js",
-  "repository": "https://github.com/LeoDog896/discord-chat-webhook",
-  "author": "Tristan F. <LeoDog896@hotmail.com>",
-  "license": "MIT",
-  "private": false,
-  "scripts": {
-    "format": "prettier --write .",
-    "check": "prettier --check .",
-    "build": "tsc"
-  },
-  "dependencies": {
-    "consola": "^2.15.3",
-    "discord.js": "^14.6.0",
-    "dotenv": "^16.0.3"
-  },
-  "devDependencies": {
-    "eslint": "^8.27.0",
-    "prettier": "2.7.1",
-    "typescript": "^4.8.4"
-  }
+	"name": "discord-chat-webhook",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "An interactive bot wrapper around discord webhooks",
+	"main": "dist/index.js",
+	"repository": "https://github.com/LeoDog896/discord-chat-webhook",
+	"author": "Tristan F. <LeoDog896@hotmail.com>",
+	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"format": "prettier --write .",
+		"check": "prettier --check .",
+		"build": "tsc"
+	},
+	"dependencies": {
+		"consola": "^2.15.3",
+		"discord.js": "^14.6.0",
+		"dotenv": "^16.0.3"
+	},
+	"devDependencies": {
+		"eslint": "^8.27.0",
+		"prettier": "2.7.1",
+		"typescript": "^4.8.4"
+	}
 }
