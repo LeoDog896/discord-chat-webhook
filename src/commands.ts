@@ -3,7 +3,11 @@ import { Message } from "./rpc";
 
 interface Command {
 	name: string;
-	execute: (client: WebhookClient, message: Message, args: string[]) => Promise<void>;
+	execute: (
+		client: WebhookClient,
+		message: Message,
+		args: string[]
+	) => Promise<void>;
 }
 
 export const commands: Command[] = [
@@ -12,13 +16,13 @@ export const commands: Command[] = [
 		name: "ping",
 		execute: async (client) => {
 			await client.send("pong");
-		}
+		},
 	},
 	{
-		// when hello is sent, send back "Hello, {usenrname}!"
+		// when hello is sent, send back "Hello, {username}!"
 		name: "hello",
 		execute: async (client, message) => {
 			await client.send(`Hello, ${message.author.username}!`);
-		}
-	}
-]
+		},
+	},
+];

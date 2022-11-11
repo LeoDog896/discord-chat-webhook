@@ -6,32 +6,32 @@ import type { WebhookClient } from "discord.js";
 
 // from https://discord.com/developers/docs/topics/rpc#messagecreatemessageupdatemessagedelete
 export interface Message {
-	id: string,
-	blocked: boolean,
-	content: string,
+	id: string;
+	blocked: boolean;
+	content: string;
 	/* parsed content as a JSON object */
-	content_parsed: any,
+	content_parsed: any;
 	/* hex code, ex #ffffff */
-	author_color: string,
-	edited_timestamp: string | number, // ??
+	author_color: string;
+	edited_timestamp: string | number; // ??
 	/* A UTC timestamp such as 2016-07-05T04:30:50.776Z */
-	timestamp: string,
+	timestamp: string;
 	/* Whether to read the timestamp in TTS (text-to-speech) */
-	tts: boolean,
-	mentions: any[],
-	mention_roles: any[],
-	mention_everyone: boolean,
-	embeds: any[],
-	attachments: any[],
-	type: number,
-	pinned: boolean,
+	tts: boolean;
+	mentions: any[];
+	mention_roles: any[];
+	mention_everyone: boolean;
+	embeds: any[];
+	attachments: any[];
+	type: number;
+	pinned: boolean;
 	author: {
-		id: string,
-		username: string,
-		discriminator: string,
-		avatar: string,
-		bot: boolean
-	}
+		id: string;
+		username: string;
+		discriminator: string;
+		avatar: string;
+		bot: boolean;
+	};
 }
 
 const scopes = ["rpc", "messages.read"];
@@ -61,12 +61,21 @@ export const ready = new Promise<void>((resolve) => {
 	});
 });
 
-export function listen(webhook: WebhookClient, callback: (message: string) => void) {
+export function listen(
+	webhook: WebhookClient,
+	callback: (message: string) => void
+) {
 	client.on("MESSAGE_CREATE", async ({ message }) => {
 		callback(message.author.username + ": " + message.content);
 
 		if (message.content.startsWith(prefix)) {
-			commands.find((command) => message.content.startsWith(prefix + command.name))?.execute(webhook, message, message.content.slice(prefix.length).split(" "));
+			commands
+				.find((command) => message.content.startsWith(prefix + command.name))
+				?.execute(
+					webhook,
+					message,
+					message.content.slice(prefix.length).split(" ")
+				);
 		}
 	});
 }

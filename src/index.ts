@@ -54,7 +54,7 @@ input.key(["escape", "C-c"], () => {
 });
 
 input.key("enter", () => {
-	webhookClient.send(input.getValue())
+	webhookClient.send(input.getValue());
 	input.setValue("");
 });
 
