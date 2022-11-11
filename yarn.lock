@@ -116,6 +116,13 @@
   resolved "https://registry.yarnpkg.com/@tokenizer/token/-/token-0.3.0.tgz#fe98a93fe789247e998c75e74e9c7c63217aa276"
   integrity sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==
 
+"@types/blessed@^0.1.19":
+  version "0.1.19"
+  resolved "https://registry.yarnpkg.com/@types/blessed/-/blessed-0.1.19.tgz#aafb3ebad6036fbe63ba28285ca2bead624c3d14"
+  integrity sha512-r4qnseYWBsi/kxo5AAlCS22EnTXFbGpnvuXUubJikVeRnYB3e5HwV3NtcwJ0Sk5KOGaLvo9Rtwb8hzxfbqbQPg==
+  dependencies:
+    "@types/node" "*"
+
 "@types/discord-rpc@^4.0.3":
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/@types/discord-rpc/-/discord-rpc-4.0.3.tgz#3ff5bf9d406841e3744575df0a9e967f52df1ccb"
@@ -188,6 +195,11 @@ bindings@^1.3.0:
   integrity sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==
   dependencies:
     file-uri-to-path "1.0.0"
+
+blessed@^0.1.81:
+  version "0.1.81"
+  resolved "https://registry.yarnpkg.com/blessed/-/blessed-0.1.81.tgz#f962d687ec2c369570ae71af843256e6d0ca1129"
+  integrity sha512-LoF5gae+hlmfORcG1M5+5XZi4LBmvlXTzwJWzUlPryN/SJdSflZvROM2TwkT0GMpq7oqT48NRd4GS7BiVBc5OQ==
 
 brace-expansion@^1.1.7:
   version "1.1.11"

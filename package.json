@@ -15,6 +15,7 @@
 		"start": "yarn build && node dist/index.js"
 	},
 	"dependencies": {
+		"blessed": "^0.1.81",
 		"consola": "^2.15.3",
 		"discord-rpc": "^4.0.1",
 		"discord.js": "^14.6.0",
@@ -22,6 +23,7 @@
 		"prompts": "^2.4.2"
 	},
 	"devDependencies": {
+		"@types/blessed": "^0.1.19",
 		"@types/discord-rpc": "^4.0.3",
 		"@types/prompts": "^2.4.1",
 		"eslint": "^8.27.0",

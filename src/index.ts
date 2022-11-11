@@ -3,6 +3,7 @@ import { webhookURL, clientId, clientSecret, channelID } from "./config.js";
 import consola from "consola";
 import prompts from "prompts";
 import RPC from "discord-rpc";
+import blessed from "blessed"
 
 {
 	const scopes = ["rpc", "messages.read"];
