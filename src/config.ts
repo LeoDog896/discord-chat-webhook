@@ -20,3 +20,4 @@ export const webhookURL = assertNotNull("WEBHOOK_URL");
 export const clientId = assertNotNull("CLIENT_ID");
 export const clientSecret = assertNotNull("CLIENT_SECRET");
 export const channelID = assertNotNull("CHANNEL_ID");
+export const prefix = process.env.PREFIX || ">";

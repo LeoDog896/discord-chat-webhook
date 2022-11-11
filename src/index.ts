@@ -64,7 +64,7 @@ input.focus();
 
 screen.render();
 
-listen((message) => {
+listen(webhookClient, (message) => {
 	messageList.addItem(message);
 	messageList.scrollTo(100);
 	screen.render();
