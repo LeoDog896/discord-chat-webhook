@@ -16,9 +16,12 @@ const messageList = blessed.list({
 	mouse: true,
 	keys: true,
 	width: "100%",
-	height: "90%",
+	height: "80%",
 	top: 0,
 	left: 0,
+	border: {
+		type: "line",
+	},
 	scrollbar: {
 		ch: " ",
 		// TODO inverse: true
@@ -28,7 +31,8 @@ const messageList = blessed.list({
 
 const input = blessed.textarea({
 	bottom: 0,
-	height: "10%",
+	width: "100%",
+	height: "20%",
 	inputOnFocus: true,
 	padding: {
 		top: 1,
