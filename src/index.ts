@@ -1,55 +1,67 @@
 import { WebhookClient } from "discord.js";
-import { webhookURL, clientId, clientSecret, channelID } from "./config.js";
-import consola from "consola";
-import prompts from "prompts";
-import RPC from "discord-rpc";
-import blessed from "blessed"
+import { webhookURL } from "./config.js";
+import blessed from "blessed";
+import { listen, ready } from "./rpc.js";
 
-{
-	const scopes = ["rpc", "messages.read"];
+await ready;
 
-	const client = new RPC.Client({ transport: "ipc" });
+const webhookClient = new WebhookClient({ url: webhookURL });
 
-	client.on("ready", () => {
-		consola.info("Logged in as", client.application?.name);
-		consola.info("Authed for user", client.user?.username);
+const screen = blessed.screen({
+	smartCSR: true,
+});
 
-		// listen to messages
-		client.subscribe("MESSAGE_CREATE", { channel_id: channelID });
-	});
+const messageList = blessed.list({
+	align: "left",
+	mouse: true,
+	keys: true,
+	width: "100%",
+	height: "90%",
+	top: 0,
+	left: 0,
+	scrollbar: {
+		ch: " ",
+		// TODO inverse: true
+	},
+	items: [],
+});
 
-	client.on("MESSAGE_CREATE", async ({ message }) => {
-		consola.info(message.author.username + ":", message.content);
-	});
+const input = blessed.textarea({
+	bottom: 0,
+	height: "10%",
+	inputOnFocus: true,
+	padding: {
+		top: 1,
+		left: 2,
+	},
+	style: {
+		fg: "#787878",
+		bg: "#454545",
 
-	await client.login({ clientId, scopes, clientSecret, redirectUri: "http://localhost:6842" }).catch((e) => {
-		consola.error("RPC Error:", e);
-		process.exit(1);
-	});
-}
+		focus: {
+			fg: "#f6f6f6",
+			bg: "#353535",
+		},
+	},
+});
 
-{
-	const webhookClient = new WebhookClient({ url: webhookURL });
+input.key(["escape", "C-c"], () => {
+	process.exit(0);
+});
 
-	consola.info("Webhook started!");
+input.key("enter", () => {
+	webhookClient.send(input.getValue())
+	input.setValue("");
+});
 
-	while (true) {
-		// prompt the user for a message
-		const response = await prompts({
-			type: "text",
-			name: "message",
-			message: "Enter Message:",
-		});
+screen.append(messageList);
+screen.append(input);
+input.focus();
 
-		if (!response.message) {
-			process.exit(0);
-		}
+screen.render();
 
-		if (!response.message.trim()) {
-			continue;
-		}
-
-		// send the message
-		await webhookClient.send(response.message);
-	}
-}
+listen((message) => {
+	messageList.addItem(message);
+	messageList.scrollTo(100);
+	screen.render();
+});
