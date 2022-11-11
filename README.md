@@ -1,6 +1,12 @@
 # discord-chat-webhook
 
-an application that allows you to chat as a webhook programatically and interactively
+a TUI that allows you to chat as a webhook programatically and interactively
+
+## Setup
+
+Configure your .env accordingly to the configuration section below.
+
+This runs locally on your computer, and it will automatically authenticate you with Discord.
 
 ## Configuration
 
