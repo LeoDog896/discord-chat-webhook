@@ -20,4 +20,6 @@ The following ENV variables are required:
 
 `CHANNEL_ID` - the channel id to send messages to
 
+`PREFIX` (optional) - the prefix to use for commands
+
 <!-- TODO gif demonstration of how to retrieve theis -->
