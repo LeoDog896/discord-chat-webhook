@@ -16,5 +16,4 @@ function assertNotNull(name: string): string {
 
 dotenv.config();
 
-export const webhookId = assertNotNull("WEBHOOK_ID");
-export const webhookToken = assertNotNull("WEBHOOK_TOKEN");
+export const webhookURL = assertNotNull("WEBHOOK_URL");

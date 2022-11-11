@@ -6,7 +6,6 @@ an application that allows you to chat as a webhook programatically and interact
 
 The following ENV variables are required:
 
-`WEBHOOK_ID` (string) the ID of the webhook
-`WEBHOOK_TOKEN` (string) the secret for the webhook
+`WEBHOOK_URL` (string) the URL of the webhook
 
-<!-- TODO gif demonstration of how to retrieve these two -->
+<!-- TODO gif demonstration of how to retrieve theis -->
