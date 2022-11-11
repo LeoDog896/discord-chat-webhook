@@ -8,6 +8,12 @@ Go to https://discord.com/api/oauth2/authorize?client_id=1040636269648158802&red
 
 The following ENV variables are required:
 
-`WEBHOOK_URL` (string) the URL of the webhook
+`WEBHOOK_URL` - the webhook url to send messages to
+
+`CLIENT_SECRET` - the client secret of the application
+
+`CLIENT_ID` - the client id of the application
+
+`CHANNEL_ID` - the channel id to send messages to
 
 <!-- TODO gif demonstration of how to retrieve theis -->
